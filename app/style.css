@@ -1,0 +1,30 @@
+@font-face { font-family: 'Anton'; src: url('./fonts/Anton-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Pacifico'; src: url('./fonts/Pacifico-Regular.ttf') format('truetype'); font-display: swap; }
+
+html, body { margin: 0; min-height: 100%; background: #12081c; color: #f5eefc; font: 15px/1.45 system-ui, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 10px; width: 320px; flex: none; background: #1d1030; border: 1px solid #3a2358; border-radius: 14px; padding: 20px; box-sizing: border-box; }
+.controls h1 { margin: 0; font-family: Anton, 'Arial Black', sans-serif; font-size: 30px; letter-spacing: 1px; color: #fff; text-transform: uppercase; }
+.controls h1 span { color: #ff2e88; }
+.controls h2 { margin: 10px 0 0; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #7df9ff; }
+.tag { margin: 0; color: #c9b8de; }
+.hint { margin: 0; color: #9d8ab5; font-size: 13px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 13px; }
+input[type=text], select { font: inherit; padding: 9px; border: 1px solid #4a2f6e; border-radius: 8px; background: #241638; color: #fff; }
+input[type=range] { accent-color: #ff2e88; }
+.row { display: flex; gap: 8px; }
+.row.wrap { flex-wrap: wrap; }
+button { font: inherit; font-weight: 700; padding: 9px 12px; border: 1px solid #4a2f6e; border-radius: 8px; background: #2a1a44; color: #f5eefc; cursor: pointer; }
+button:hover { border-color: #ff2e88; }
+button.on { background: #ff2e88; border-color: #ff2e88; color: #fff; }
+button.primary { background: #ff2e88; border-color: #ff2e88; flex: 1; }
+.file { flex: 1; }
+.file input { font-weight: 400; }
+.preview-wrap { flex: 1; display: flex; justify-content: center; min-width: 0; }
+#preview { max-width: 100%; max-height: calc(100vh - 48px); width: auto; height: auto; border-radius: 10px; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55); cursor: grab; }
+#preview:active { cursor: grabbing; }
+#status { min-height: 1.2em; color: #7df9ff; margin: 0; }
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover #preview { max-height: 100vh; width: 100vw; height: 100vh; border-radius: 0; box-shadow: none; }
+@media (max-width: 900px) { .app { flex-direction: column; } .controls { width: 100%; } }

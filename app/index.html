@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Vice Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h1>Neon Vice <span>Cover Studio</span></h1>
+    <p class="tag">Your photo, poster-style. Pick a layout, a grade and a size — then export the PNG.</p>
+
+    <h2>1 · Photos</h2>
+    <div class="row">
+      <button type="button" data-sample="0">Boulevard sample</button>
+      <button type="button" data-sample="1">Pier sample</button>
+    </div>
+    <div class="row">
+      <label class="file">Upload photo 1 <input type="file" data-upload="2" accept="image/*"></label>
+      <label class="file">Upload photo 2 <input type="file" data-upload="3" accept="image/*"></label>
+    </div>
+    <p id="panel-label" class="hint">Panel 1 of 4 — Boulevard sample</p>
+    <label>Photo in selected panel
+      <select id="panel-photo">
+        <option value="0">Boulevard sample</option>
+        <option value="1">Pier sample</option>
+        <option value="2">Upload 1</option>
+        <option value="3">Upload 2</option>
+      </select>
+    </label>
+    <label>Zoom selected panel <input id="zoom" type="range" min="1" max="2.5" step="0.05" value="1"></label>
+    <p class="hint">Click a panel in the preview to select it, then drag it to pan.</p>
+
+    <h2>2 · Words</h2>
+    <label>Title <input id="title" type="text" maxlength="40" value="Sunset Heist"></label>
+    <label>Subtitle <input id="subtitle" type="text" maxlength="60" value="neon nights, palm dreams"></label>
+    <label>Badge <input id="badge" type="text" maxlength="16" value="Neon Coast"></label>
+    <label>Heat (stars) <input id="stars" type="range" min="0" max="5" step="1" value="4"></label>
+
+    <h2>3 · Layout</h2>
+    <div class="row wrap" id="layouts">
+      <button type="button" data-layout="hero3">Hero + 3</button>
+      <button type="button" data-layout="grid4">Four grid</button>
+      <button type="button" data-layout="grid9">Nine grid</button>
+      <button type="button" data-layout="fullbleed">Full-bleed</button>
+      <button type="button" data-layout="tilted">Tilted</button>
+      <button type="button" data-layout="diagonal">Diagonal</button>
+    </div>
+
+    <h2>4 · Grade</h2>
+    <div class="row wrap" id="grades">
+      <button type="button" data-grade="sunset">Vice Sunset</button>
+      <button type="button" data-grade="neon">Neon Night</button>
+      <button type="button" data-grade="palm">Palm Gold</button>
+      <button type="button" data-grade="teal">Teal Noir</button>
+      <button type="button" data-grade="rose">Rose Dusk</button>
+    </div>
+
+    <h2>5 · Size &amp; export</h2>
+    <div class="row wrap" id="sizes">
+      <button type="button" data-size="square">1080 × 1080</button>
+      <button type="button" data-size="portrait">1080 × 1350</button>
+      <button type="button" data-size="wide">1920 × 1080</button>
+    </div>
+    <div class="row">
+      <button type="button" id="undo">Undo</button>
+      <button type="button" id="redo">Redo</button>
+      <button type="button" id="export" class="primary">Export PNG</button>
+    </div>
+    <p id="status" role="status"></p>
+  </section>
+  <section class="preview-wrap">
+    <canvas id="preview" width="1920" height="1080" aria-label="Live cover preview"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
